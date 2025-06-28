@@ -1,5 +1,5 @@
 import express from 'express';
-import { insertContactFormSchema, insertReviewSchema } from '@shared/schema';
+import { insertContactFormSchema, insertReviewSchema } from '../shared/schema.js';
 import { storage } from './storage';
 
 const router = express.Router();
