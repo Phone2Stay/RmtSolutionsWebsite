@@ -1,4 +1,4 @@
-import { ContactForm, InsertContactForm, Review, InsertReview } from '@shared/schema';
+import { ContactForm, InsertContactForm, Review, InsertReview } from '../shared/schema.js';
 
 export interface IStorage {
   // Contact forms
