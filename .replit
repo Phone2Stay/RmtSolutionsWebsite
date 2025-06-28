@@ -14,3 +14,5 @@ externalPort = 80
 
 [deployment]
 deploymentTarget = "cloudrun"
+build = ["sh", "-c", "echo \"Static website - no build required\""]
+run = ["sh", "-c", "python3 server.py"]
