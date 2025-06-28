@@ -1,62 +1,116 @@
-# Project Documentation
+# RMT Solutions Website
 
 ## Overview
 
-This repository is currently empty and ready for initial development. This document will serve as the architectural guide for the coding agent and will be updated as the project evolves.
+A professional website for RMT Solutions showcasing gardening, painting, and pressure washing services in Barry, Vale of Glamorgan. Built as a static website using HTML, CSS, and JavaScript to provide a user-friendly, aesthetic experience highlighting the services offered by Ryan and Mackenzie.
 
 ## System Architecture
 
-To be determined based on project requirements. Common architectural patterns to consider:
-- Monolithic vs Microservices
-- Client-server architecture
-- MVC or similar design patterns
-- Database-driven applications
+**Static Website Architecture:**
+- Frontend: HTML5, CSS3, JavaScript (ES6+)
+- Styling: Custom CSS with responsive design
+- Icons: Font Awesome 6.0
+- No backend required - pure client-side website
+- Mobile-first responsive design approach
 
 ## Key Components
 
-Currently no components exist. This section will be updated to include:
-- Frontend framework/library choices
-- Backend server implementation
-- Database layer
-- Authentication system
-- API design
-- Third-party service integrations
+**Website Features:**
+- Professional header with RMT Solutions branding and logo
+- Hero section highlighting Barry, Vale of Glamorgan location
+- Services showcase (Gardening, Painting, Pressure Washing)
+- Customer reviews section featuring authentic testimonials
+- Interactive contact form with validation
+- Business information and hours
+- Instagram integration (@rmt.solutionsltd)
+- Gallery section for work examples
+- Call-to-action sections
+- Mobile-responsive navigation
+
+**Technical Components:**
+- `index.html` - Main website structure
+- `styles.css` - Complete styling and responsive design
+- `script.js` - Interactive functionality and form handling
+- `attached_assets/` - Logo and images from Instagram
 
 ## Data Flow
 
-Data flow patterns will be documented here once the application architecture is established. This may include:
-- Request/response cycles
-- Data validation and processing
-- Database interactions
-- External API communications
+**Static Website Flow:**
+- Direct file serving from root directory
+- Form submissions handled via JavaScript (currently simulated)
+- Smooth scrolling navigation between sections
+- Interactive elements with hover effects and animations
+- Mobile menu toggle functionality
 
 ## External Dependencies
 
-No external dependencies currently identified. Future dependencies may include:
-- Package managers (npm, pip, etc.)
-- Databases (PostgreSQL, MongoDB, etc.)
-- Third-party APIs
-- Cloud services
-- Authentication providers
+**CDN Resources:**
+- Font Awesome 6.0 (icons)
+- Google Fonts (implied through system fonts)
+
+**Integrations:**
+- Instagram link to @rmt.solutionsltd
+- Contact information (phone, email placeholders)
+
+## Key Features Implemented
+
+**Design & UX:**
+- Professional green color scheme (#22c55e primary)
+- Card-based layout for services and reviews
+- Hover animations and smooth transitions
+- Mobile-responsive design
+- Accessibility considerations
+
+**Content Sections:**
+1. Header with logo and navigation
+2. Hero section with call-to-action
+3. Services breakdown with feature lists
+4. Work gallery with lightbox functionality
+5. Customer reviews with 5-star ratings
+6. Contact form with validation
+7. Business hours and contact details
+8. Footer with social links
+
+**Interactive Elements:**
+- Contact form with real-time validation
+- Mobile hamburger menu
+- Smooth scroll navigation
+- Gallery image lightbox
+- Loading states and success messages
+- Hover effects on service cards
 
 ## Deployment Strategy
 
-Deployment strategy to be determined. Considerations may include:
-- Development vs production environments
-- CI/CD pipeline setup
-- Hosting platform selection
-- Environment variable management
-- Database migration strategies
+**Static Website Hosting:**
+- Can be deployed to any static hosting service
+- No server-side requirements
+- Files ready for deployment to platforms like:
+  - Netlify
+  - Vercel
+  - GitHub Pages
+  - Traditional web hosting
 
-## Changelog
+## Recent Changes
 
-Changelog:
-- June 28, 2025. Initial setup
+- June 28, 2025: Created complete RMT Solutions website
+  - Built responsive HTML structure
+  - Implemented professional CSS styling
+  - Added JavaScript interactivity
+  - Integrated RMT Solutions branding and logo
+  - Featured customer reviews and services
+  - Added Instagram integration
+  - Included contact form and business information
 
 ## User Preferences
 
-Preferred communication style: Simple, everyday language.
+- Preferred communication style: Simple, everyday language
+- Wanted a user-friendly and aesthetic website (not an app)
+- Focus on Barry, Vale of Glamorgan location
+- Showcase gardening, painting, and pressure washing services
+- Feature customer reviews from Instagram highlights
+- Include contact form for Ryan and Mackenzie
+- Link to Instagram @rmt.solutionsltd
 
 ---
 
-*Note: This document will be updated as the project develops and architectural decisions are made.*
+*Website is ready for deployment and can be viewed by opening index.html in a web browser.*
