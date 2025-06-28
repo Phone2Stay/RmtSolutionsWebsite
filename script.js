@@ -47,6 +47,123 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Mobile Carousel Functionality
+class MobileCarousel {
+    constructor(containerSelector, slideSelector, dotsSelector, prevSelector, nextSelector) {
+        this.container = document.querySelector(containerSelector);
+        this.slides = document.querySelectorAll(slideSelector);
+        this.dots = document.querySelectorAll(dotsSelector);
+        this.prevBtn = document.querySelector(prevSelector);
+        this.nextBtn = document.querySelector(nextSelector);
+        this.currentSlide = 0;
+        this.totalSlides = this.slides.length;
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.container || this.totalSlides === 0) return;
+        
+        this.setupEventListeners();
+        this.setupTouchEvents();
+        this.updateSlide();
+    }
+    
+    setupEventListeners() {
+        // Navigation buttons
+        if (this.prevBtn) {
+            this.prevBtn.addEventListener('click', () => this.prevSlide());
+        }
+        if (this.nextBtn) {
+            this.nextBtn.addEventListener('click', () => this.nextSlide());
+        }
+        
+        // Dots navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+    }
+    
+    setupTouchEvents() {
+        let startX = 0;
+        let endX = 0;
+        const threshold = 50;
+        
+        this.container.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        this.container.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            
+            if (Math.abs(diffX) > threshold) {
+                if (diffX > 0) {
+                    this.nextSlide();
+                } else {
+                    this.prevSlide();
+                }
+            }
+        }, { passive: true });
+    }
+    
+    updateSlide() {
+        // Hide all slides
+        this.slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        
+        // Show current slide
+        if (this.slides[this.currentSlide]) {
+            this.slides[this.currentSlide].classList.add('active');
+        }
+        
+        // Update dots
+        this.dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        if (this.dots[this.currentSlide]) {
+            this.dots[this.currentSlide].classList.add('active');
+        }
+    }
+    
+    nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateSlide();
+    }
+    
+    prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateSlide();
+    }
+    
+    goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlide();
+    }
+}
+
+// Initialize carousels when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize services carousel
+    new MobileCarousel(
+        '.mobile-services-carousel',
+        '.service-slide',
+        '.service-dots .dot',
+        '.service-prev',
+        '.service-next'
+    );
+    
+    // Initialize gallery carousel
+    new MobileCarousel(
+        '.mobile-gallery-carousel',
+        '.gallery-slide',
+        '.gallery-dots .dot',
+        '.gallery-prev',
+        '.gallery-next'
+    );
+});
+
 // Contact form functionality
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {

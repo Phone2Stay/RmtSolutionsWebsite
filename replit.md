@@ -92,6 +92,16 @@ A professional website for RMT Solutions showcasing gardening, painting, and pre
 
 ## Recent Changes
 
+- June 28, 2025: Implemented mobile-first UI with swipe functionality
+  - Added mobile carousel system for services and gallery sections
+  - Created swipe gestures (left/right) for iPhone navigation
+  - Implemented touch-friendly dot indicators and navigation arrows
+  - Services now display one-at-a-time on mobile with smooth transitions
+  - Gallery images now show full-screen individually on mobile devices
+  - Desktop retains original grid layout, mobile gets optimized carousel experience
+  - Responsive design automatically switches between layouts at 768px breakpoint
+  - Enhanced mobile experience addresses user feedback about long scrolling pages
+
 - June 28, 2025: Enhanced hero section with real gardening background image
   - Removed user-requested SVG illustrations from gallery (lawn stripes and fence painting)
   - Replaced created SVG hero background with authentic gardening image from Unsplash
