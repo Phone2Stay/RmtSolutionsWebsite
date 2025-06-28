@@ -37,6 +37,72 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <div class="hero-background">
+            <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+                <!-- Sky gradient -->
+                <defs>
+                    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#87ceeb;stop-opacity:1" />
+                        <stop offset="70%" style="stop-color:#b0e0e6;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f0f8ff;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4ade80;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="grassDark" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Sky background -->
+                <rect width="1200" height="300" fill="url(#skyGradient)"/>
+                
+                <!-- Ground base -->
+                <rect x="0" y="300" width="1200" height="300" fill="url(#grassGradient)"/>
+                
+                <!-- Lawn stripes for professional look -->
+                <rect x="0" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="120" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="240" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="360" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="480" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="600" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="720" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="840" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="960" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                <rect x="1080" y="300" width="60" height="300" fill="url(#grassDark)"/>
+                
+                <!-- Trees and landscaping -->
+                <circle cx="100" cy="250" r="40" fill="#059669"/>
+                <rect x="95" y="250" width="10" height="60" fill="#92400e"/>
+                
+                <circle cx="1100" cy="260" r="35" fill="#065f46"/>
+                <rect x="1095" y="260" width="10" height="50" fill="#92400e"/>
+                
+                <!-- Hedge elements -->
+                <ellipse cx="300" cy="280" rx="80" ry="25" fill="#16a34a"/>
+                <ellipse cx="900" cy="285" rx="70" ry="20" fill="#16a34a"/>
+                
+                <!-- Garden tools (subtle) -->
+                <rect x="200" y="320" width="3" height="30" fill="#92400e"/>
+                <circle cx="201.5" cy="315" r="8" fill="#374151"/>
+                
+                <!-- House silhouette in distance -->
+                <rect x="500" y="200" width="80" height="60" fill="#8b5a3c" opacity="0.3"/>
+                <polygon points="500,200 540,170 580,200" fill="#7f1d1d" opacity="0.3"/>
+                
+                <!-- Flowers -->
+                <circle cx="150" cy="320" r="3" fill="#fbbf24"/>
+                <circle cx="160" cy="325" r="3" fill="#f59e0b"/>
+                <circle cx="170" cy="318" r="3" fill="#fbbf24"/>
+                
+                <circle cx="1050" cy="315" r="3" fill="#ec4899"/>
+                <circle cx="1060" cy="320" r="3" fill="#be185d"/>
+                <circle cx="1070" cy="312" r="3" fill="#ec4899"/>
+            </svg>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h2>Professional Services in<br><span class="highlight">Barry, Vale of Glamorgan</span></h2>
@@ -158,89 +224,7 @@
                         <p>Professional patio and driveway cleaning</p>
                     </div>
                 </div>
-                <div class="gallery-item">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Professional lawn with mower tracks -->
-                        <defs>
-                            <linearGradient id="grass1" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#4ade80;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#22c55e;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="grass2" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#65a30d;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#4d7c0f;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Sky -->
-                        <rect width="400" height="100" fill="#87ceeb"/>
-                        <!-- Ground base -->
-                        <rect x="0" y="100" width="400" height="200" fill="#22c55e"/>
-                        <!-- Lawn stripes -->
-                        <rect x="0" y="100" width="50" height="200" fill="url(#grass1)"/>
-                        <rect x="50" y="100" width="50" height="200" fill="url(#grass2)"/>
-                        <rect x="100" y="100" width="50" height="200" fill="url(#grass1)"/>
-                        <rect x="150" y="100" width="50" height="200" fill="url(#grass2)"/>
-                        <rect x="200" y="100" width="50" height="200" fill="url(#grass1)"/>
-                        <rect x="250" y="100" width="50" height="200" fill="url(#grass2)"/>
-                        <rect x="300" y="100" width="50" height="200" fill="url(#grass1)"/>
-                        <rect x="350" y="100" width="50" height="200" fill="url(#grass2)"/>
-                        <!-- House outline -->
-                        <rect x="280" y="50" width="100" height="80" fill="#8b5a3c" stroke="#654321" stroke-width="2"/>
-                        <polygon points="280,50 330,20 380,50" fill="#7f1d1d"/>
-                        <!-- Trees -->
-                        <circle cx="50" cy="80" r="25" fill="#059669"/>
-                        <rect x="47" y="80" width="6" height="30" fill="#92400e"/>
-                        <circle cx="350" cy="90" r="20" fill="#065f46"/>
-                        <rect x="347" y="90" width="6" height="25" fill="#92400e"/>
-                    </svg>
-                    <div class="gallery-overlay">
-                        <h4>Perfect Lawn Stripes</h4>
-                        <p>Professional mowing with stunning stripe patterns</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Freshly painted fence -->
-                        <defs>
-                            <linearGradient id="wood" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#f3f4f6;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <!-- Sky -->
-                        <rect width="400" height="120" fill="#bfdbfe"/>
-                        <!-- Ground -->
-                        <rect x="0" y="120" width="400" height="180" fill="#22c55e"/>
-                        <!-- Fence posts -->
-                        <rect x="20" y="80" width="8" height="80" fill="#6b7280"/>
-                        <rect x="90" y="80" width="8" height="80" fill="#6b7280"/>
-                        <rect x="160" y="80" width="8" height="80" fill="#6b7280"/>
-                        <rect x="230" y="80" width="8" height="80" fill="#6b7280"/>
-                        <rect x="300" y="80" width="8" height="80" fill="#6b7280"/>
-                        <rect x="370" y="80" width="8" height="80" fill="#6b7280"/>
-                        <!-- Fence panels -->
-                        <rect x="28" y="90" width="62" height="60" fill="url(#wood)" stroke="#d1d5db" stroke-width="1"/>
-                        <rect x="98" y="90" width="62" height="60" fill="url(#wood)" stroke="#d1d5db" stroke-width="1"/>
-                        <rect x="168" y="90" width="62" height="60" fill="url(#wood)" stroke="#d1d5db" stroke-width="1"/>
-                        <rect x="238" y="90" width="62" height="60" fill="url(#wood)" stroke="#d1d5db" stroke-width="1"/>
-                        <rect x="308" y="90" width="62" height="60" fill="url(#wood)" stroke="#d1d5db" stroke-width="1"/>
-                        <!-- Vertical slats -->
-                        <line x1="38" y1="90" x2="38" y2="150" stroke="#d1d5db" stroke-width="1"/>
-                        <line x1="48" y1="90" x2="48" y2="150" stroke="#d1d5db" stroke-width="1"/>
-                        <line x1="58" y1="90" x2="58" y2="150" stroke="#d1d5db" stroke-width="1"/>
-                        <line x1="68" y1="90" x2="68" y2="150" stroke="#d1d5db" stroke-width="1"/>
-                        <line x1="78" y1="90" x2="78" y2="150" stroke="#d1d5db" stroke-width="1"/>
-                        <!-- Grass detail -->
-                        <rect x="0" y="160" width="400" height="140" fill="#16a34a"/>
-                        <!-- Paint brush (showing work in progress) -->
-                        <rect x="350" y="130" width="3" height="30" fill="#92400e"/>
-                        <rect x="348" y="125" width="7" height="8" fill="#374151"/>
-                    </svg>
-                    <div class="gallery-overlay">
-                        <h4>Fresh Fence Painting</h4>
-                        <p>Professional exterior painting and maintenance</p>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
