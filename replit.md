@@ -92,6 +92,14 @@ A professional website for RMT Solutions showcasing gardening, painting, and pre
 
 ## Recent Changes
 
+- June 28, 2025: Enhanced hero section with real gardening background image
+  - Removed user-requested SVG illustrations from gallery (lawn stripes and fence painting)
+  - Replaced created SVG hero background with authentic gardening image from Unsplash
+  - Used professional photo showing garden tools and soil (similar to "shovel in dirt" style requested)
+  - Applied subtle dark overlay and backdrop blur effects for text readability
+  - Maintained semi-transparent white content box for professional appearance
+  - Website now uses only authentic images (customer photos + real stock photography)
+
 - June 28, 2025: Fixed deployment configuration issues
   - Updated Python server (server.py) with proper health check endpoint
   - Added PORT environment variable support for deployment
