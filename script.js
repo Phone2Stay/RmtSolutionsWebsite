@@ -162,6 +162,15 @@ document.addEventListener('DOMContentLoaded', function() {
         '.gallery-prev',
         '.gallery-next'
     );
+    
+    // Initialize before/after carousel
+    new MobileCarousel(
+        '.mobile-before-after-carousel',
+        '.before-after-slide',
+        '.before-after-dots .dot',
+        '.before-after-prev',
+        '.before-after-next'
+    );
 });
 
 // Contact form functionality

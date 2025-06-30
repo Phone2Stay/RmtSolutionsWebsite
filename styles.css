@@ -522,6 +522,142 @@ body {
     }
 }
 
+/* Before and After Section */
+.before-after {
+    padding: 5rem 0;
+    background: white;
+}
+
+.before-after-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.before-after-item {
+    background: #f8f9fa;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.before-after-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-container {
+    display: flex;
+    height: 300px;
+}
+
+.before-image,
+.after-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.before-image img,
+.after-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.before-after-item:hover .before-image img,
+.before-after-item:hover .after-image img {
+    transform: scale(1.05);
+}
+
+.image-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.image-label.before {
+    background: rgba(239, 68, 68, 0.9);
+}
+
+.image-label.after {
+    background: rgba(34, 197, 94, 0.9);
+}
+
+/* Mobile Before/After Carousel */
+.mobile-before-after-carousel {
+    display: none;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.before-after-slider {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.before-after-slide {
+    display: none;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.before-after-slide.active {
+    display: block;
+}
+
+.before-after-slide .comparison-container {
+    height: 250px;
+}
+
+.before-after-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.before-after-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.before-after-prev,
+.before-after-next {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.before-after-prev:hover,
+.before-after-next:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
 .gallery-item {
     position: relative;
     border-radius: 12px;
@@ -997,6 +1133,14 @@ html {
     }
     
     .mobile-gallery-carousel {
+        display: block !important;
+    }
+    
+    .desktop-before-after {
+        display: none !important;
+    }
+    
+    .mobile-before-after-carousel {
         display: block !important;
     }
     

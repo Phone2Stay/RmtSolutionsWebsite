@@ -92,6 +92,23 @@ A professional website for RMT Solutions showcasing gardening, painting, and pre
 
 ## Recent Changes
 
+- June 30, 2025: Added before and after photo gallery section
+  - Created new before/after section below main gallery with 16 customer transformation photos
+  - Desktop shows side-by-side comparison grid with hover effects
+  - Mobile features swipeable carousel with before/after pairs
+  - Added red "Before" and green "After" labels for clear identification
+  - Responsive design switches between grid and carousel at 768px breakpoint
+  - Integrated with existing mobile swipe functionality
+
+- June 30, 2025: Updated content and restructured services
+  - Changed hero title to all green text covering Barry, Vale of Glamorgan and Cardiff
+  - Merged services from 3 to 2 sections: Gardening and Pressure Washing
+  - Moved painting services under pressure washing as fence/decking painting
+  - Updated gardening services: removed tree pruning, added spring scarification and flowerbed maintenance
+  - Added subscription options section highlighting grass cutting and hedge trimming packages
+  - Updated contact information with phone number +44 7723 937077
+  - Removed business hours, updated all location references to include Cardiff
+
 - June 28, 2025: Implemented mobile-first UI with swipe functionality
   - Added mobile carousel system for services and gallery sections
   - Created swipe gestures (left/right) for iPhone navigation
