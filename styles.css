@@ -216,8 +216,17 @@ body {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
 }
 
 /* Mobile Services Carousel */
@@ -817,14 +826,31 @@ body {
     font-size: 0.9rem;
 }
 
-.footer-links a {
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: #666;
-    font-size: 1.5rem;
+}
+
+.contact-item i {
+    color: #22c55e;
+    width: 20px;
+}
+
+.contact-item a {
+    color: #666;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.contact-item a:hover {
     color: #22c55e;
 }
 
@@ -847,6 +873,16 @@ body {
     
     .mobile-menu-toggle {
         display: block;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-contact {
+        align-items: center;
     }
     
     .hero-content h2 {
