@@ -39,8 +39,8 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2>Professional Services in<br><span class="highlight">Barry, Vale of Glamorgan</span></h2>
-                <p>Quality gardening, painting, and pressure washing services by Ryan and Mackenzie. Serving the local community with professional, reliable service.</p>
+                <h2><span class="highlight">Professional Services</span><br><span class="highlight">Based in Barry, covering the Vale of Glamorgan and Cardiff</span></h2>
+                <p>Quality gardening and pressure washing services by Ryan and Mackenzie. Serving the local community with professional, reliable service.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Get Free Quote</a>
                     <a href="https://www.instagram.com/rmt.solutionsltd/" target="_blank" class="btn btn-secondary">
@@ -56,7 +56,7 @@
         <div class="container">
             <div class="section-header">
                 <h3>Our Services</h3>
-                <p>We provide comprehensive outdoor maintenance services to homes and businesses throughout Barry and the Vale of Glamorgan.</p>
+                <p>We provide comprehensive outdoor maintenance services to homes throughout Barry, the Vale of Glamorgan and Cardiff.</p>
             </div>
             
             <!-- Desktop services grid -->
@@ -71,23 +71,9 @@
                         <li>Hedge trimming and shaping</li>
                         <li>Grass cutting and lawn maintenance</li>
                         <li>Garden clearance and cleanup</li>
+                        <li>Flowerbed maintenance</li>
+                        <li>Spring scarification</li>
                         <li>Planting and landscaping</li>
-                        <li>Tree pruning and care</li>
-                    </ul>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <h4>Painting Services</h4>
-                    <p>Interior and exterior painting for homes and businesses</p>
-                    <ul>
-                        <li>Interior wall painting</li>
-                        <li>Exterior house painting</li>
-                        <li>Fence and decking staining</li>
-                        <li>Commercial painting projects</li>
-                        <li>Surface preparation and priming</li>
                     </ul>
                 </div>
 
@@ -95,14 +81,14 @@
                     <div class="service-icon">
                         <i class="fas fa-tint"></i>
                     </div>
-                    <h4>Pressure Washing</h4>
-                    <p>High-quality cleaning for driveways, patios, and exteriors</p>
+                    <h4>Pressure Washing Services</h4>
+                    <p>High-quality cleaning for driveways, patios, and fence & decking painting</p>
                     <ul>
                         <li>Driveway and patio cleaning</li>
                         <li>Building exterior washing</li>
                         <li>Deck and fence cleaning</li>
+                        <li>Fence and decking painting</li>
                         <li>Gutter cleaning services</li>
-                        <li>Commercial pressure washing</li>
                     </ul>
                 </div>
             </div>
@@ -121,25 +107,9 @@
                                 <li>Hedge trimming and shaping</li>
                                 <li>Grass cutting and lawn maintenance</li>
                                 <li>Garden clearance and cleanup</li>
+                                <li>Flowerbed maintenance</li>
+                                <li>Spring scarification</li>
                                 <li>Planting and landscaping</li>
-                                <li>Tree pruning and care</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="service-slide">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-paint-brush"></i>
-                            </div>
-                            <h4>Painting Services</h4>
-                            <p>Interior and exterior painting for homes and businesses</p>
-                            <ul>
-                                <li>Interior wall painting</li>
-                                <li>Exterior house painting</li>
-                                <li>Fence and decking staining</li>
-                                <li>Commercial painting projects</li>
-                                <li>Surface preparation and priming</li>
                             </ul>
                         </div>
                     </div>
@@ -149,14 +119,14 @@
                             <div class="service-icon">
                                 <i class="fas fa-tint"></i>
                             </div>
-                            <h4>Pressure Washing</h4>
-                            <p>High-quality cleaning for driveways, patios, and exteriors</p>
+                            <h4>Pressure Washing Services</h4>
+                            <p>High-quality cleaning for driveways, patios, and fence & decking painting</p>
                             <ul>
                                 <li>Driveway and patio cleaning</li>
                                 <li>Building exterior washing</li>
                                 <li>Deck and fence cleaning</li>
+                                <li>Fence and decking painting</li>
                                 <li>Gutter cleaning services</li>
-                                <li>Commercial pressure washing</li>
                             </ul>
                         </div>
                     </div>
@@ -165,12 +135,29 @@
                 <div class="service-dots">
                     <span class="dot active" data-slide="0"></span>
                     <span class="dot" data-slide="1"></span>
-                    <span class="dot" data-slide="2"></span>
                 </div>
                 
                 <div class="service-nav">
                     <button class="service-prev" aria-label="Previous service">‹</button>
                     <button class="service-next" aria-label="Next service">›</button>
+                </div>
+            </div>
+            
+            <!-- Subscription Options Section -->
+            <div class="subscription-section">
+                <div class="subscription-header">
+                    <h4><i class="fas fa-calendar-alt"></i> Subscription Services</h4>
+                    <p>Regular maintenance packages for consistent care</p>
+                </div>
+                <div class="subscription-options">
+                    <div class="subscription-item">
+                        <strong>Grass Cutting:</strong>
+                        <span>Bi-weekly or Monthly packages available</span>
+                    </div>
+                    <div class="subscription-item">
+                        <strong>Hedge Trimming:</strong>
+                        <span>Monthly, Bi-Monthly, or Quarterly maintenance</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -466,14 +453,13 @@
                                 <select id="service" name="service" required>
                                     <option value="">Select a service</option>
                                     <option value="gardening">Gardening Services</option>
-                                    <option value="painting">Painting Services</option>
-                                    <option value="pressure-washing">Pressure Washing</option>
+                                    <option value="pressure-washing">Pressure Washing Services</option>
                                     <option value="other">Other</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="location">Location</label>
-                                <input type="text" id="location" name="location" placeholder="Barry, Vale of Glamorgan" required>
+                                <input type="text" id="location" name="location" placeholder="Barry, Vale of Glamorgan, Cardiff" required>
                             </div>
                         </div>
                         
@@ -529,13 +515,18 @@
                     <img src="attached_assets/image_1751145094163.png" alt="RMT Solutions" class="logo-img">
                     <div>
                         <h4>RMT Solutions</h4>
-                        <p>Professional Services in Barry</p>
+                        <p>Based in Barry, covering the Vale of Glamorgan and Cardiff</p>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <a href="https://www.instagram.com/rmt.solutionsltd/" target="_blank">
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+447723937077">+44 7723 937077</a>
+                    </div>
+                    <div class="contact-item">
                         <i class="fab fa-instagram"></i>
-                    </a>
+                        <a href="https://www.instagram.com/rmt.solutionsltd/" target="_blank">@rmt.solutionsltd</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
