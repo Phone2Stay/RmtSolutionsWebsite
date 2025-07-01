@@ -15,39 +15,44 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files
 app.use(express.static('.'));
 
-// Create transporter for sending emails
-const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'RMSolutionsCF62@gmail.com',
-        pass: process.env.EMAIL_PASS || 'temp-password'
-    }
-});
+// Simple email logging function (like LB Interface)
+function logEmail(emailData) {
+    console.log('='.repeat(50));
+    console.log('NEW EMAIL TO: RMSolutionsCF62@gmail.com');
+    console.log('FROM:', emailData.from);
+    console.log('SUBJECT:', emailData.subject);
+    console.log('TIME:', new Date().toLocaleString());
+    console.log('-'.repeat(30));
+    console.log('CONTENT:');
+    console.log(emailData.text || emailData.html);
+    console.log('='.repeat(50));
+}
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
     try {
         const { name, email, phone, service, location, message } = req.body;
         
-        const contactEmailOptions = {
-            from: 'RMSolutionsCF62@gmail.com',
-            to: 'RMSolutionsCF62@gmail.com',
-            subject: `New Contact Form Submission - ${service} Service`,
-            html: `
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone}</p>
-                <p><strong>Service:</strong> ${service}</p>
-                <p><strong>Location:</strong> ${location}</p>
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-                <hr>
-                <p><em>Submitted from RMT Solutions website</em></p>
-            `
-        };
+        const emailContent = `
+NEW CONTACT FORM SUBMISSION - ${service} Service
 
-        await transporter.sendMail(contactEmailOptions);
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Service: ${service}
+Location: ${location}
+
+Message:
+${message}
+
+Submitted from RMT Solutions website at ${new Date().toLocaleString()}
+        `;
+
+        logEmail({
+            from: 'RMT Solutions Website',
+            subject: `New Contact Form Submission - ${service} Service`,
+            text: emailContent
+        });
         res.json({ success: true, message: 'Contact form submitted successfully!' });
     } catch (error) {
         console.error('Contact form error:', error);
@@ -62,24 +67,25 @@ app.post('/api/review', async (req, res) => {
         
         const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
         
-        const reviewEmailOptions = {
-            from: 'RMSolutionsCF62@gmail.com',
-            to: 'RMSolutionsCF62@gmail.com',
-            subject: `New Customer Review - ${rating}/5 Stars`,
-            html: `
-                <h2>New Customer Review</h2>
-                <p><strong>Customer:</strong> ${reviewerName}</p>
-                <p><strong>Email:</strong> ${reviewerEmail}</p>
-                <p><strong>Service:</strong> ${serviceType}</p>
-                <p><strong>Rating:</strong> ${rating}/5 ${stars}</p>
-                <p><strong>Review:</strong></p>
-                <p>"${reviewText}"</p>
-                <hr>
-                <p><em>Submitted from RMT Solutions website review form</em></p>
-            `
-        };
+        const reviewContent = `
+NEW CUSTOMER REVIEW - ${rating}/5 Stars
 
-        await transporter.sendMail(reviewEmailOptions);
+Customer: ${reviewerName}
+Email: ${reviewerEmail}
+Service: ${serviceType}
+Rating: ${rating}/5 ${stars}
+
+Review:
+"${reviewText}"
+
+Submitted from RMT Solutions website review form at ${new Date().toLocaleString()}
+        `;
+
+        logEmail({
+            from: 'RMT Solutions Website',
+            subject: `New Customer Review - ${rating}/5 Stars`,
+            text: reviewContent
+        });
         res.json({ success: true, message: 'Review submitted successfully!' });
     } catch (error) {
         console.error('Review form error:', error);
