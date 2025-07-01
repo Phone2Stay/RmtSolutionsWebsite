@@ -47,10 +47,20 @@ A professional website for RMT Solutions showcasing gardening, painting, and pre
 **CDN Resources:**
 - Font Awesome 6.0 (icons)
 - Google Fonts (implied through system fonts)
+- EmailJS 3.x (for contact and review form email functionality)
 
 **Integrations:**
 - Instagram link to @rmt.solutionsltd
-- Contact information (phone, email placeholders)
+- Email functionality via EmailJS (requires setup with service provider)
+- Contact and review forms automatically send to RMSolutionsCF62@gmail.com
+
+**EmailJS Setup Required:**
+To activate email functionality, you need to:
+1. Create account at emailjs.com
+2. Set up email service (Gmail recommended)
+3. Create two email templates: 'contact_template' and 'review_template'
+4. Update the EmailJS initialization in script.js with your service ID
+5. Replace 'default_service' with your actual EmailJS service ID
 
 ## Key Features Implemented
 
@@ -91,6 +101,16 @@ A professional website for RMT Solutions showcasing gardening, painting, and pre
   - Traditional web hosting
 
 ## Recent Changes
+
+- July 1, 2025: Major functionality and content updates
+  - Removed "Fully insured and reliable" text from Ready to Get Started section
+  - Updated contact information: phone +44 7723 937077, email RMSolutionsCF62@gmail.com
+  - Completely removed business hours section throughout site
+  - Added review submission form at bottom with 1-5 star rating system
+  - Integrated EmailJS for automatic email sending from both contact and review forms
+  - Forms now send directly to RMSolutionsCF62@gmail.com when submitted
+  - Added interactive star rating with hover effects and proper validation
+  - Enhanced mobile responsiveness for review form
 
 - June 30, 2025: Added before and after photo gallery section
   - Created new before/after section below main gallery with 16 customer transformation photos
