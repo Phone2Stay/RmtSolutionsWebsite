@@ -16,11 +16,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('.'));
 
 // Create transporter for sending emails
-const transporter = nodemailer.createTransporter({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: process.env.EMAIL_USER || 'your-email@gmail.com',
-        pass: process.env.EMAIL_PASS || 'your-app-password'
+        user: 'RMSolutionsCF62@gmail.com',
+        pass: process.env.EMAIL_PASS || 'temp-password'
     }
 });
 
@@ -30,7 +30,7 @@ app.post('/api/contact', async (req, res) => {
         const { name, email, phone, service, location, message } = req.body;
         
         const contactEmailOptions = {
-            from: process.env.EMAIL_USER || 'your-email@gmail.com',
+            from: 'RMSolutionsCF62@gmail.com',
             to: 'RMSolutionsCF62@gmail.com',
             subject: `New Contact Form Submission - ${service} Service`,
             html: `
@@ -63,7 +63,7 @@ app.post('/api/review', async (req, res) => {
         const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
         
         const reviewEmailOptions = {
-            from: process.env.EMAIL_USER || 'your-email@gmail.com',
+            from: 'RMSolutionsCF62@gmail.com',
             to: 'RMSolutionsCF62@gmail.com',
             subject: `New Customer Review - ${rating}/5 Stars`,
             html: `
