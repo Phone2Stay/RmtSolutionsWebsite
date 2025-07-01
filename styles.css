@@ -1165,3 +1165,61 @@ html {
         justify-content: center;
     }
 }
+
+/* Review Submission Styles */
+.review-submission {
+    background: linear-gradient(135deg, #f9fafb 0%, #e5f3e5 100%);
+    padding: 80px 0;
+}
+
+.review-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label.star {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.star-rating label.star:hover,
+.star-rating label.star:hover ~ label.star {
+    color: #ffc107;
+}
+
+.star-rating input[type="radio"]:checked ~ label.star {
+    color: #ffc107;
+}
+
+.star-rating input[type="radio"]:checked + label.star {
+    color: #ffc107;
+}
+
+@media (max-width: 768px) {
+    .review-form-container {
+        margin: 0 1rem;
+        padding: 30px 20px;
+    }
+    
+    .star-rating label.star {
+        font-size: 25px;
+    }
+}

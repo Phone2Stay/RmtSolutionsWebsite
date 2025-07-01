@@ -202,13 +202,27 @@ if (contactForm) {
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Simulate form submission (in a real implementation, this would send to a server)
-        setTimeout(() => {
+        // Send email using EmailJS
+        emailjs.send('default_service', 'contact_template', {
+            from_name: formData.get('name'),
+            from_email: formData.get('email'),
+            phone: formData.get('phone'),
+            service: formData.get('service'),
+            location: formData.get('location'),
+            message: formData.get('message'),
+            to_email: 'RMSolutionsCF62@gmail.com'
+        }).then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
             showMessage('Thank you for your message! Ryan and Mackenzie will get back to you within 24 hours.', 'success');
             contactForm.reset();
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, 1500);
+        }, function(error) {
+            console.log('FAILED...', error);
+            showMessage('Sorry, there was an error sending your message. Please call us directly at +44 7723 937077.', 'error');
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
     });
 }
 
@@ -412,6 +426,49 @@ function addLoadingAnimation() {
 
 addLoadingAnimation();
 
+// Review form handling
+const reviewForm = document.getElementById('reviewForm');
+if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(reviewForm);
+        const submitButton = reviewForm.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = 'Submitting...';
+        submitButton.disabled = true;
+        
+        // Get selected rating
+        const rating = formData.get('rating');
+        const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
+        
+        // Send review email using EmailJS
+        emailjs.send('default_service', 'review_template', {
+            reviewer_name: formData.get('reviewerName'),
+            reviewer_email: formData.get('reviewerEmail'),
+            service_type: formData.get('serviceType'),
+            rating: rating,
+            rating_stars: stars,
+            review_text: formData.get('reviewText'),
+            to_email: 'RMSolutionsCF62@gmail.com'
+        }).then(function(response) {
+            console.log('Review SUCCESS!', response.status, response.text);
+            showMessage('Thank you for your review! It helps us improve our services and helps other customers.', 'success');
+            reviewForm.reset();
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }, function(error) {
+            console.log('Review FAILED...', error);
+            showMessage('Sorry, there was an error submitting your review. Please try again later.', 'error');
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        });
+    });
+}
+
+// Initialize EmailJS (you'll need to replace with your actual service ID)
+// emailjs.init('YOUR_EMAILJS_USER_ID');
+
 // Initialize the website
 console.log('RMT Solutions website loaded successfully!');
-console.log('Features: Mobile menu, smooth scrolling, contact form, animations, lightbox gallery');
+console.log('Features: Mobile menu, smooth scrolling, contact form, review form, animations, lightbox gallery');
