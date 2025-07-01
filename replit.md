@@ -102,6 +102,12 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
+- July 1, 2025: Added new customer review and updated backup
+  - Added 5-star review from Sabraya for lawn turfing/seeding services
+  - Website now features 7 authentic customer testimonials
+  - Created updated backup: rmt-solutions-website-updated.zip
+  - Review highlights garden transformation and professional service
+
 - July 1, 2025: Completed email functionality for contact and review forms
   - Implemented simple email logging system (like LB Interface approach)
   - Added /api/contact and /api/review endpoints to Python server
