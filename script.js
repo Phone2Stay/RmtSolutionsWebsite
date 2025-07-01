@@ -202,23 +202,34 @@ if (contactForm) {
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Send email using EmailJS
-        emailjs.send('default_service', 'contact_template', {
-            from_name: formData.get('name'),
-            from_email: formData.get('email'),
-            phone: formData.get('phone'),
-            service: formData.get('service'),
-            location: formData.get('location'),
-            message: formData.get('message'),
-            to_email: 'RMSolutionsCF62@gmail.com'
-        }).then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            showMessage('Thank you for your message! Ryan and Mackenzie will get back to you within 24 hours.', 'success');
-            contactForm.reset();
+        // Send contact form to server
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                service: formData.get('service'),
+                location: formData.get('location'),
+                message: formData.get('message')
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showMessage('Thank you for your message! Ryan and Mackenzie will get back to you within 24 hours.', 'success');
+                contactForm.reset();
+            } else {
+                showMessage('Sorry, there was an error sending your message. Please call us directly at +44 7723 937077.', 'error');
+            }
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, function(error) {
-            console.log('FAILED...', error);
+        })
+        .catch(error => {
+            console.error('Contact form error:', error);
             showMessage('Sorry, there was an error sending your message. Please call us directly at +44 7723 937077.', 'error');
             submitButton.textContent = originalText;
             submitButton.disabled = false;
@@ -442,32 +453,39 @@ if (reviewForm) {
         const rating = formData.get('rating');
         const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
         
-        // Send review email using EmailJS
-        emailjs.send('default_service', 'review_template', {
-            reviewer_name: formData.get('reviewerName'),
-            reviewer_email: formData.get('reviewerEmail'),
-            service_type: formData.get('serviceType'),
-            rating: rating,
-            rating_stars: stars,
-            review_text: formData.get('reviewText'),
-            to_email: 'RMSolutionsCF62@gmail.com'
-        }).then(function(response) {
-            console.log('Review SUCCESS!', response.status, response.text);
-            showMessage('Thank you for your review! It helps us improve our services and helps other customers.', 'success');
-            reviewForm.reset();
+        // Send review to server
+        fetch('/api/review', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                reviewerName: formData.get('reviewerName'),
+                reviewerEmail: formData.get('reviewerEmail'),
+                serviceType: formData.get('serviceType'),
+                rating: rating,
+                reviewText: formData.get('reviewText')
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                showMessage('Thank you for your review! It helps us improve our services and helps other customers.', 'success');
+                reviewForm.reset();
+            } else {
+                showMessage('Sorry, there was an error submitting your review. Please try again later.', 'error');
+            }
             submitButton.textContent = originalText;
             submitButton.disabled = false;
-        }, function(error) {
-            console.log('Review FAILED...', error);
+        })
+        .catch(error => {
+            console.error('Review form error:', error);
             showMessage('Sorry, there was an error submitting your review. Please try again later.', 'error');
             submitButton.textContent = originalText;
             submitButton.disabled = false;
         });
     });
 }
-
-// Initialize EmailJS (you'll need to replace with your actual service ID)
-// emailjs.init('YOUR_EMAILJS_USER_ID');
 
 // Initialize the website
 console.log('RMT Solutions website loaded successfully!');
