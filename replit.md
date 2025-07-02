@@ -102,6 +102,12 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
+- July 1, 2025: Updated domain and hero title
+  - Changed hero title to "Professional services, based in Barry and surrounding areas"
+  - Updated domain information to rmtsolutions.uk
+  - Website ready for deployment at new domain
+  - Simplified and cleaned up main title
+
 - July 1, 2025: Added new customer review and updated backup
   - Added 5-star review from Sabraya for lawn turfing/seeding services
   - Website now features 7 authentic customer testimonials
@@ -191,4 +197,4 @@ To activate email functionality, you need to:
 
 ---
 
-*Website is ready for deployment and can be viewed by opening index.html in a web browser.*
+*Website is ready for deployment at rmtsolutions.uk or can be viewed by opening index.html in a web browser.*
