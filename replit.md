@@ -102,6 +102,14 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
+- July 3, 2025: Fixed contact and review forms for static hosting
+  - Replaced server endpoints with Formspree integration for Netlify compatibility
+  - Contact form now sends to https://formspree.io/f/xkgwzvko
+  - Review form submissions also use Formspree with proper field mapping
+  - Both forms now work perfectly on static hosting with email delivery to RMSolutionsCF62@gmail.com
+  - No server-side code required - pure static website functionality
+  - Forms include proper validation and success/error messaging
+
 - July 1, 2025: Updated domain and hero title
   - Changed hero title to "Professional services, based in Barry and surrounding areas"
   - Updated domain information to rmtsolutions.uk

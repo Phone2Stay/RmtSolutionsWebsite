@@ -202,8 +202,8 @@ if (contactForm) {
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Send contact form to server
-        fetch('/api/contact', {
+        // Send contact form using Formspree (static hosting compatible)
+        fetch('https://formspree.io/f/xkgwzvko', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -214,12 +214,13 @@ if (contactForm) {
                 phone: formData.get('phone'),
                 service: formData.get('service'),
                 location: formData.get('location'),
-                message: formData.get('message')
+                message: formData.get('message'),
+                _replyto: formData.get('email'),
+                _subject: `New Contact Form - ${formData.get('service')} Service`
             })
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
+        .then(response => {
+            if (response.ok) {
                 showMessage('Thank you for your message! Ryan and Mackenzie will get back to you within 24 hours.', 'success');
                 contactForm.reset();
             } else {
@@ -453,8 +454,8 @@ if (reviewForm) {
         const rating = formData.get('rating');
         const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
         
-        // Send review to server
-        fetch('/api/review', {
+        // Send review using Formspree (static hosting compatible)
+        fetch('https://formspree.io/f/xkgwzvko', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -464,12 +465,15 @@ if (reviewForm) {
                 reviewerEmail: formData.get('reviewerEmail'),
                 serviceType: formData.get('serviceType'),
                 rating: rating,
-                reviewText: formData.get('reviewText')
+                reviewText: formData.get('reviewText'),
+                stars: stars,
+                _replyto: formData.get('reviewerEmail'),
+                _subject: `New Customer Review - ${rating}/5 Stars - ${formData.get('serviceType')}`,
+                formType: 'review'
             })
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
+        .then(response => {
+            if (response.ok) {
                 showMessage('Thank you for your review! It helps us improve our services and helps other customers.', 'success');
                 reviewForm.reset();
             } else {
