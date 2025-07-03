@@ -91,14 +91,14 @@ To activate email functionality, you need to:
 
 ## Deployment Strategy
 
-**Static Website Hosting:**
-- Can be deployed to any static hosting service
-- No server-side requirements
-- Files ready for deployment to platforms like:
-  - Netlify
-  - Vercel
-  - GitHub Pages
-  - Traditional web hosting
+**Netlify + GitHub Integration:**
+- Repository hosted on GitHub for version control
+- Automatic deployment to Netlify (free tier)
+- Custom domain rmtsolutions.uk connected via Netlify
+- Continuous deployment from GitHub main branch
+- No server-side requirements - pure static hosting
+- Edit in Replit, deploy via GitHub integration
+- Zero hosting costs with Netlify free tier
 
 ## Recent Changes
 
