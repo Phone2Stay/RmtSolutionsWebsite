@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
 }
 
 .logo {
@@ -44,10 +44,11 @@ body {
 }
 
 .logo-img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
+    background: white;
 }
 
 .logo-text h1 {
@@ -948,8 +949,11 @@ body {
 }
 
 .footer-logo .logo-img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: white;
 }
 
 .footer-logo h4 {
