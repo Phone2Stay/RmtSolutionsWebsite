@@ -703,8 +703,10 @@
 
                 <div class="contact-form">
                     <h4>Request a Free Quote</h4>
-                    <form action="https://formspree.io/f/RMSolutionsCF62@gmail.com" method="POST">
+                    <form action="https://formsubmit.co/RMSolutionsCF62@gmail.com" method="POST">
                         <input type="hidden" name="_subject" value="New Contact from RMT Solutions Website">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://rmtsolutions.uk/thank-you.html">
                         
                         <div class="form-row">
@@ -720,7 +722,7 @@
                         
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="_replyto" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         
                         <div class="form-row">
@@ -743,9 +745,6 @@
                             <label for="message">Project Details</label>
                             <textarea id="message" name="message" rows="5" placeholder="Please describe your project requirements, preferred timing, and any specific details..." required></textarea>
                         </div>
-                        
-                        <!-- Anti-spam honeypot field -->
-                        <input type="text" name="_gotcha" style="display:none">
                         
                         <button type="submit" class="btn btn-primary btn-full">Send Message</button>
                     </form>
@@ -791,8 +790,10 @@
             </div>
             
             <div class="review-form-container">
-                <form class="review-form" action="https://formspree.io/f/RMSolutionsCF62@gmail.com" method="POST">
+                <form class="review-form" action="https://formsubmit.co/RMSolutionsCF62@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="New Customer Review - RMT Solutions">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://rmtsolutions.uk/thank-you.html">
                     
                     <div class="form-row">
@@ -802,7 +803,7 @@
                         </div>
                         <div class="form-group">
                             <label for="reviewerEmail">Email Address</label>
-                            <input type="email" id="reviewerEmail" name="_replyto" required>
+                            <input type="email" id="reviewerEmail" name="reviewerEmail" required>
                         </div>
                     </div>
                     
@@ -836,9 +837,6 @@
                         <label for="reviewText">Your Review</label>
                         <textarea id="reviewText" name="reviewText" rows="4" placeholder="Tell us about your experience with RMT Solutions..." required></textarea>
                     </div>
-                    
-                    <!-- Anti-spam honeypot field -->
-                    <input type="text" name="_gotcha" style="display:none">
                     
                     <button type="submit" class="btn btn-primary btn-full">Submit Review</button>
                 </form>
