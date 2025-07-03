@@ -173,70 +173,8 @@ document.addEventListener('DOMContentLoaded', function() {
     );
 });
 
-// Contact form functionality
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
-        
-        // Basic validation
-        if (!data.name || !data.email || !data.phone || !data.service || !data.location || !data.message) {
-            showMessage('Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-            showMessage('Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        // Show loading state
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
-        
-        // Send contact form using Formspree (static hosting compatible)
-        fetch('https://formspree.io/f/xkgwzvko', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: formData.get('name'),
-                email: formData.get('email'),
-                phone: formData.get('phone'),
-                service: formData.get('service'),
-                location: formData.get('location'),
-                message: formData.get('message'),
-                _replyto: formData.get('email'),
-                _subject: `New Contact Form - ${formData.get('service')} Service`
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                showMessage('Thank you for your message! Ryan and Mackenzie will get back to you within 24 hours.', 'success');
-                contactForm.reset();
-            } else {
-                showMessage('Sorry, there was an error sending your message. Please call us directly at +44 7723 937077.', 'error');
-            }
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        })
-        .catch(error => {
-            console.error('Contact form error:', error);
-            showMessage('Sorry, there was an error sending your message. Please call us directly at +44 7723 937077.', 'error');
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        });
-    });
-}
+// Contact form now uses direct HTML submission to Formspree
+// No JavaScript handling needed - forms submit directly
 
 // Show message function
 function showMessage(message, type) {
@@ -438,58 +376,8 @@ function addLoadingAnimation() {
 
 addLoadingAnimation();
 
-// Review form handling
-const reviewForm = document.getElementById('reviewForm');
-if (reviewForm) {
-    reviewForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData(reviewForm);
-        const submitButton = reviewForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
-        submitButton.textContent = 'Submitting...';
-        submitButton.disabled = true;
-        
-        // Get selected rating
-        const rating = formData.get('rating');
-        const stars = '★'.repeat(parseInt(rating)) + '☆'.repeat(5 - parseInt(rating));
-        
-        // Send review using Formspree (static hosting compatible)
-        fetch('https://formspree.io/f/xkgwzvko', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                reviewerName: formData.get('reviewerName'),
-                reviewerEmail: formData.get('reviewerEmail'),
-                serviceType: formData.get('serviceType'),
-                rating: rating,
-                reviewText: formData.get('reviewText'),
-                stars: stars,
-                _replyto: formData.get('reviewerEmail'),
-                _subject: `New Customer Review - ${rating}/5 Stars - ${formData.get('serviceType')}`,
-                formType: 'review'
-            })
-        })
-        .then(response => {
-            if (response.ok) {
-                showMessage('Thank you for your review! It helps us improve our services and helps other customers.', 'success');
-                reviewForm.reset();
-            } else {
-                showMessage('Sorry, there was an error submitting your review. Please try again later.', 'error');
-            }
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        })
-        .catch(error => {
-            console.error('Review form error:', error);
-            showMessage('Sorry, there was an error submitting your review. Please try again later.', 'error');
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        });
-    });
-}
+// Review form now uses direct HTML submission to Formspree
+// No JavaScript handling needed - forms submit directly
 
 // Initialize the website
 console.log('RMT Solutions website loaded successfully!');

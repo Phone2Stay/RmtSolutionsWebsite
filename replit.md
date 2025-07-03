@@ -102,13 +102,16 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
-- July 3, 2025: Fixed contact and review forms for static hosting
-  - Replaced server endpoints with Formspree integration for Netlify compatibility
-  - Contact form now sends to https://formspree.io/f/xkgwzvko
-  - Review form submissions also use Formspree with proper field mapping
-  - Both forms now work perfectly on static hosting with email delivery to RMSolutionsCF62@gmail.com
-  - No server-side code required - pure static website functionality
-  - Forms include proper validation and success/error messaging
+- July 3, 2025: Fixed contact and review forms for static hosting using Norman Bakes approach
+  - Converted JavaScript-based forms to direct HTML submission (same as Norman Bakes)
+  - Contact form now submits directly to https://formspree.io/f/RMSolutionsCF62@gmail.com
+  - Review form also submits directly to same endpoint with proper field mapping
+  - Added thank-you.html page for post-submission redirects
+  - Removed complex JavaScript form handling - forms now use simple HTML POST method
+  - Forms include anti-spam honeypot fields and proper field naming
+  - Both forms redirect to thank-you page after successful submission
+  - Email delivery to RMSolutionsCF62@gmail.com with proper subject lines
+  - No server-side code or API keys required - pure static website functionality
 
 - July 1, 2025: Updated domain and hero title
   - Changed hero title to "Professional services, based in Barry and surrounding areas"
