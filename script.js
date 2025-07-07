@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     );
 });
 
-// Contact form now uses direct HTML submission to Formspree
+// Forms now use direct HTML submission to FormSubmit
 // No JavaScript handling needed - forms submit directly
 
 // Show message function
