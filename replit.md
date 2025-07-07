@@ -102,13 +102,13 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
-- July 7, 2025: Implemented Formspree for direct email delivery
-  - Both forms now use Formspree endpoint for immediate email delivery
-  - Contact and review forms submit to https://formspree.io/f/xqkvaqdv
-  - Direct email delivery to RMSolutionsCF62@gmail.com without dashboard setup
-  - Uses _replyto field for proper email reply functionality
+- July 7, 2025: Restored working FormSubmit configuration
+  - Both forms back to using FormSubmit.co as it was successfully delivering emails
+  - Contact form: https://formsubmit.co/RMSolutionsCF62@gmail.com with subject "New Contact from RMT Solutions Website"
+  - Review form: https://formsubmit.co/RMSolutionsCF62@gmail.com with subject "New Customer Review - RMT Solutions"
+  - Both forms include _captcha=false and _next redirect to thank-you page
+  - Direct email delivery to RMSolutionsCF62@gmail.com working as confirmed by user
   - Compatible with Netlify static hosting - no server-side code needed
-  - One-time email verification required, then instant email delivery
 
 - July 1, 2025: Updated domain and hero title
   - Changed hero title to "Professional services, based in Barry and surrounding areas"
