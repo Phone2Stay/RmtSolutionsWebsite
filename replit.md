@@ -102,15 +102,13 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
-- July 7, 2025: Fixed forms with Netlify Forms integration
-  - Switched from FormSubmit.co to Netlify Forms due to server outages (Error 522)
-  - Contact form uses data-netlify="true" with name="contact"
-  - Review form uses data-netlify="true" with name="reviews"
-  - Both forms redirect to thank-you.html after successful submission
-  - Forms automatically captured in Netlify dashboard
-  - Email notifications to RMSolutionsCF62@gmail.com set up via Netlify Forms dashboard
-  - No external services needed - integrated with existing Netlify hosting
-  - Reliable solution with no third-party dependencies
+- July 7, 2025: Restored FormSubmit.co form configuration
+  - Back to using FormSubmit.co as it was working reliably for user
+  - Contact form submits to https://formsubmit.co/RMSolutionsCF62@gmail.com
+  - Review form also uses FormSubmit.co with same email destination
+  - Both forms include _captcha=false and _next redirect to thank-you page
+  - Custom subject lines: "New Contact from RMT Solutions Website" and "New Customer Review - RMT Solutions"
+  - Direct email delivery to RMSolutionsCF62@gmail.com without third-party setup required
 
 - July 1, 2025: Updated domain and hero title
   - Changed hero title to "Professional services, based in Barry and surrounding areas"
