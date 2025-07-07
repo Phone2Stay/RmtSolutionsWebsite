@@ -173,8 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
     );
 });
 
-// Forms now use direct HTML submission to FormSubmit
-// No JavaScript handling needed - forms submit directly
+// Forms use direct HTML submission to FormSubmit - compatible with Netlify static hosting
 
 // Show message function
 function showMessage(message, type) {
