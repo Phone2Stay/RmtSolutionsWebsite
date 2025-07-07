@@ -102,14 +102,13 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
-- July 7, 2025: Configured Netlify Forms for static hosting compatibility
-  - Switched to Netlify Forms using data-netlify="true" attribute
-  - Contact form uses name="contact" for identification
-  - Review form uses name="reviews" for identification
-  - Both forms redirect to /thank-you.html after submission
+- July 7, 2025: Implemented Formspree for direct email delivery
+  - Both forms now use Formspree endpoint for immediate email delivery
+  - Contact and review forms submit to https://formspree.io/f/xqkvaqdv
+  - Direct email delivery to RMSolutionsCF62@gmail.com without dashboard setup
+  - Uses _replyto field for proper email reply functionality
   - Compatible with Netlify static hosting - no server-side code needed
-  - Email notifications configured via Netlify dashboard to RMSolutionsCF62@gmail.com
-  - Form submissions captured automatically in Netlify Forms dashboard
+  - One-time email verification required, then instant email delivery
 
 - July 1, 2025: Updated domain and hero title
   - Changed hero title to "Professional services, based in Barry and surrounding areas"
