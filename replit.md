@@ -102,16 +102,15 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
-- July 3, 2025: Fixed contact and review forms using exact Norman Bakes approach
-  - Switched from Formspree to FormSubmit.co (same service as Norman Bakes)
-  - Contact form now submits to https://formsubmit.co/RMSolutionsCF62@gmail.com
-  - Review form also uses FormSubmit.co with table formatting
-  - Added FormSubmit.co hidden fields: _captcha=false, _template=table, _next redirect
-  - Removed complex JavaScript form handling - pure HTML POST method
-  - Both forms redirect to thank-you.html page after successful submission
-  - Professional table-formatted emails delivered to RMSolutionsCF62@gmail.com
-  - Free service with instant delivery - no API keys or monthly costs required
-  - Exact same implementation as Norman Bakes cake order system
+- July 7, 2025: Fixed forms with Netlify Forms integration
+  - Switched from FormSubmit.co to Netlify Forms due to server outages (Error 522)
+  - Contact form uses data-netlify="true" with name="contact"
+  - Review form uses data-netlify="true" with name="reviews"
+  - Both forms redirect to thank-you.html after successful submission
+  - Forms automatically captured in Netlify dashboard
+  - Email notifications to RMSolutionsCF62@gmail.com set up via Netlify Forms dashboard
+  - No external services needed - integrated with existing Netlify hosting
+  - Reliable solution with no third-party dependencies
 
 - July 1, 2025: Updated domain and hero title
   - Changed hero title to "Professional services, based in Barry and surrounding areas"
