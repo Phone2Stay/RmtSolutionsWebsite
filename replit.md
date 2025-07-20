@@ -102,6 +102,13 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
+- July 7, 2025: Added 2 new before/after photo pairs to gallery
+  - Added IMG_0090 (before) and IMG_0103 (after) as new transformation pair
+  - Added IMG_0098 (before) and IMG_0108 (after) as second new transformation pair
+  - Updated carousel navigation dots to include slides 8 and 9
+  - Gallery now features 10 total before/after transformation pairs
+  - New images integrated with existing mobile carousel and desktop grid layout
+
 - July 7, 2025: Restored working FormSubmit configuration
   - Both forms back to using FormSubmit.co as it was successfully delivering emails
   - Contact form: https://formsubmit.co/RMSolutionsCF62@gmail.com with subject "New Contact from RMT Solutions Website"
