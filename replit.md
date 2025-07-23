@@ -105,6 +105,7 @@ To activate email functionality, you need to:
 - July 7, 2025: Added 2 new before/after photo pairs to gallery
   - Added IMG_0090 (before) and IMG_0103 (after) as new transformation pair
   - Added IMG_0098 (before) and IMG_0108 (after) as second new transformation pair
+  - Moved IMG_0098/IMG_0108 pair to first position in carousel for prime visibility
   - Updated carousel navigation dots to include slides 8 and 9
   - Gallery now features 10 total before/after transformation pairs
   - New images integrated with existing mobile carousel and desktop grid layout
