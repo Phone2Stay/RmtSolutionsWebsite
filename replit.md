@@ -102,6 +102,13 @@ To activate email functionality, you need to:
 
 ## Recent Changes
 
+- July 7, 2025: Added 4 new customer reviews to testimonials section
+  - Pat Owens: Long-term customer highlighting reliability and quality standards
+  - Rachel Froude: 5-star review praising garden transformation and reasonable pricing
+  - Sorsha Harney: Detailed review about 4-tiered garden clearance project
+  - Anita: Wall repair testimonial emphasizing excellent results and professionalism
+  - Website now features 11 total authentic customer testimonials
+
 - July 7, 2025: Added 2 new before/after photo pairs to gallery
   - Added IMG_0090 (before) and IMG_0103 (after) as new transformation pair
   - Added IMG_0098 (before) and IMG_0108 (after) as second new transformation pair
